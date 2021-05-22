@@ -32,9 +32,16 @@
 
 body
 {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1rem;
+  text-align: center;
+  line-height: 1.4;
+  color: rgb(53, 53, 53);
 }
 
-p, a {
-  font-family: 'Open Sans', sans-serif;
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Poppins', sans-serif;
+  text-transform: uppercase;
+  line-height: .9;
+  color: rgb(204, 51, 17);
 }

@@ -1,28 +1,27 @@
 <template>
   <main>
-    <h1>Styling with CSS Pseudo Elements.</h1>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eatus autem quo nostrum dicta amet laborum atque neque.</p>
-    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minus, saepe.</p>
-    <!-- <img src="https://source.unsplash.com/300x300/?nature,snow" alt=""> -->
-    <h2 class="selector2">Some Title</h2>
-    <h2 class="selector3">Look at super cool tooltip from the link below !!!</h2>
-    <p>Lorem ipsum dolor <a href="#" data-tool-tip="This is a cool tooltip! And it's all a clickable anchor tag.">sit amet consectetur</a>, adipisicing elit. Aliquid, nihil!</p>
-    
-    <div class="decorations">
-      <h2>We can decorate sections!</h2>
-      <div v-for="art in articles" :key="art.title" >
-        <h3 class="section-with-deco">{{ art.title }}</h3>
-        <p v-html="art.text"></p>
+    <h1 class="intro">Styling with CSS Pseudo Elements.</h1>
+
+    <div class="container">
+
+      <div class="card">
+        <img class="card__img" src="https://source.unsplash.com/400x400/?trees" alt="">
+        <div class="card__text">
+          <h3 class="card__title">Card title</h3>
+          <p class="card__body">Description of the card</p>
+        </div>
       </div>
+
+      <div class="card">
+        <img class="card__img" src="https://source.unsplash.com/400x400/?animals" alt="">
+        <div class="card__text">
+          <h3 class="card__title">Card title</h3>
+          <p class="card__body">Description of the card</p>
+        </div>
+      </div>
+
     </div>
 
-    <div class="counters">
-      <h2>We can number sections!</h2>
-      <div v-for="art in articles" :key="art.title" >
-        <h3 class="section">{{ art.title }}</h3>
-        <p v-html="art.text"></p>
-      </div>
-    </div>
   </main>
 </template>
 
@@ -51,83 +50,77 @@ export default Vue.extend({
 </script>
 
 <style scoped lang="scss">
-
-.selector2 {
-  content: url(https://source.unsplash.com/300x300/?nature);
-}
-
-.selector3::before {
-  content: open-quote;
-}
-.selector3::after {
-  content: close-quote;
-}
-
-a[data-tool-tip] {
+.intro {
   position: relative;
+  display: inline-block;
+  // << inline-block so that ::b&a match the width of the text block. Set to block to make ::b&a span full width.
+  &::before,
+  &::after {
+    content: ''; // set to empty. If no content property, ::before & ::after won't work
+    display: block;
+    position: absolute;
+  }
+  &::before {
+    background: white;
+    z-index: -1;
+    height: 101%;
+    left: -20px;
+    right: -20px;
+
+  }
+  &::after {
+    background: rgb(255, 108, 108);
+    // width: 100%; // will stop at the edge of my text block if block is inline-block
+    width: 100vw;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    z-index: -2;
+    height: 100%;
+  }
 }
 
-a[data-tool-tip]::after {
-  content: attr(data-tool-tip);
-  display: block;
-  position: absolute;
-  background-color: rgba(17, 17, 17, 0.788);
-  padding: 1em 2em;
-  color: white;
-  border-radius: 5px;
-  bottom: 0;
-  left: 0;
-  white-space: nowrap;
-  transform: scale(0);
-  transition: 
-    transform ease-out 150ms,
-    bottom ease-out 150ms;
-}
-a[data-tool-tip]:hover::after {
-  transform: scale(1);
-  bottom: 100%;
-}
-
-.decorations {
-  padding: 7em;
-}
-
-.section-with-deco::before {
-  content: url(https://source.unsplash.com/500x20/?nature);
-  display: block;
-}
-
-.counters {
-  background: lightgray;
-  text-align: left;
-  padding: 5em 8em;
-  margin-top: 7em;
-
-  counter-reset: countername;
-  // <<< will reset the counter every time we get to a section with class counters
-}
-
-.section {
-  position: relative;
-}
-
-.section::before {
-  counter-increment: countername;
-  // <<< Increments our counter
-  content: counter(countername);
-  position: absolute;
-  left: -2.5em;
-  top: -.5em;
-  background: white;
-  width: 2em;
-  height: 2em;
-  border-radius: 50%;
+.container {
+  width: 80%;
+  margin: 0 auto;
   display: flex;
   justify-content: center;
-  align-items: center;
-  border: 3px solid gray;
-  color: gray;
-  // box-sizing: border-box;
+}
+
+.card {
+  position: relative;
+  margin: 1rem;
+  background: rgba(71, 71, 71, 0.666);
+}
+
+.card__img {
+  display: block;
+  transition: opacity ease-out 250ms;
+  opacity: 1;
+}
+
+.card__img::hover {
+  opacity: 0.4;
+}
+
+.card__text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  opacity: 0;
+  transition: opacity ease-out 250ms;
+}
+
+.card::hover .card__text {
+  opacity: 1;
+}
+
+.card__title {
+  font-size: 2rem;
+  color: white;
+  margin-bottom: 0;
 }
 
 </style>
