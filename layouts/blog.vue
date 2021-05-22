@@ -1,5 +1,6 @@
 <template>
   <div>
+    <h1>BLOG LAYOUT</h1>
     <nav>
       <nuxt-link to="/">Home</nuxt-link>
       <nuxt-link to="/blog">Blog</nuxt-link>
@@ -10,7 +11,7 @@
   </div>
 </template>
 
-<style lang="scss">
+<style>
 /* For unscoped application-wide styles, write css/sass here :) */
 
 </style>

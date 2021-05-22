@@ -1,0 +1,14 @@
+/* RESPONSIVE CSS BASICS >>> */
+html {
+  box-sizing: border-box;
+  /* includes padding and border into the width/height calculation of an alement */
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+img {
+max-width: 100%;
+height: auto;
+}
