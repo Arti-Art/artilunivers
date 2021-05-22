@@ -9,3 +9,9 @@ html {
 body {
   min-height: 100%;
 }
+
+/* Instyle anchor links */
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
