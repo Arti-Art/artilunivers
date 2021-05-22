@@ -1,0 +1,40 @@
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Poppins'), local('Poppins-Regular'), url(../fonts/Poppins/Poppins-Regular.ttf);
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('~assets/fonts/Open_Sans/OpenSans-Regular.ttf') format('truetype');;
+}
+
+/* @font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Roboto'), local('Roboto-Regular'), url(../fonts/Roboto-Regular.ttf);
+} */
+
+/* @font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Montserrat'), local('Montserrat-Regular'), url(../fonts/Montserrat-Regular.ttf);
+} */
+
+body
+{
+  font-family: 'Poppins', sans-serif;
+}
+
+p, a {
+  font-family: 'Open Sans', sans-serif;
+}

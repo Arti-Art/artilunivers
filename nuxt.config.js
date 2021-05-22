@@ -20,6 +20,8 @@ export default {
   css: [
     '@/assets/css/responsive.css',
     '@/assets/css/reset.css',
+    // '~/assets/fonts/roboto.css',
+    '~/assets/css/fonts.css',
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
@@ -32,12 +34,27 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/typescript
     '@nuxt/typescript-build',
+    '@nuxtjs/fontawesome',
   ],
+
+  // Arti Test Module
+  testMessage: 'Test Message from Nuxt Config JS',
+
+  fontawesome: {
+    component: 'fa',
+    icons: {
+      // solid: true,
+      // In order not to load ALL icon sets, you need to specify which 
+      solid: ['faEnvelope', 'faLock', 'faExternalLinkAlt'],
+      brands: []
+    },
+  },
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
+    ['~/modules/arti-test-module', { token: '0494 23 93 57'}]
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
@@ -46,3 +63,4 @@ export default {
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
 }
+
