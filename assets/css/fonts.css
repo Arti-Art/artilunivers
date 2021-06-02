@@ -3,7 +3,7 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: local('Poppins'), local('Poppins-Regular'), url(../fonts/Poppins/Poppins-Regular.ttf);
+  src: local('Poppins'), local('Poppins-Regular'), url('~assets/fonts/Poppins/Poppins-Regular.ttf') format('truetype');
 }
 
 @font-face {
@@ -11,7 +11,7 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url('~assets/fonts/Open_Sans/OpenSans-Regular.ttf') format('truetype');;
+  src: url('~assets/fonts/Open_Sans/OpenSans-Regular.ttf') format('truetype');
 }
 
 /* @font-face {

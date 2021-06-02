@@ -1,15 +1,20 @@
 <template>
   <div>
     <h1>BLOG LAYOUT</h1>
-    <nav>
-      <nuxt-link to="/">Home</nuxt-link>
-      <nuxt-link to="/blog">Blog</nuxt-link>
-      <nuxt-link to="/contact">Contact</nuxt-link>
-      <nuxt-link to="/portfolio">Portfolio</nuxt-link>
-    </nav>
+    <Header />
     <Nuxt />
   </div>
 </template>
+
+<script lang="ts">
+import Vue from 'vue'
+import Header from '~/components/Header.vue'
+export default Vue.extend({
+  components: {
+    Header,
+  },
+})
+</script>
 
 <style>
 /* For unscoped application-wide styles, write css/sass here :) */

@@ -1,6 +1,5 @@
 <template>
   <header class="header">
-    <h1>This is the Header</h1>
     <ul class="nav-items">
       <li>
         <nuxt-link to="/">Home</nuxt-link>
@@ -35,5 +34,16 @@
   justify-content: space-around;
   align-items: center;
   width: 80%;
+}
+
+.nav-items a {
+  text-decoration: none;
+  color: black;
+}
+
+.nav-items a:hover,
+.nav-items a:active {
+  font-weight: 700;
+  color: red;
 }
 </style>
