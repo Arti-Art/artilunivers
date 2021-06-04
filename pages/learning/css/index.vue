@@ -9,6 +9,9 @@
       <li>
         <nuxt-link to="/learning/css/pseudo_elts_design">Styling with ::before ::after Pseudo Elements</nuxt-link>
       </li>
+      <li>
+        <nuxt-link to="/learning/css/simple_grid">Simple grid</nuxt-link>
+      </li>
     </ul>
   </main>
 </template>
