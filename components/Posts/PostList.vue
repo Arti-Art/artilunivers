@@ -1,16 +1,13 @@
 <template>
   <section class="post-list">
     <PostPreview
-      id="1"
-      thumbnail="https://source.unsplash.com/1600x900/?technology"
-      title="This is the title"
-      previewText="the preview text"
-    />
-    <PostPreview
-      id="2"
-      thumbnail="https://source.unsplash.com/1600x900/?animals"
-      title="This is the title"
-      previewText="the preview text"
+      v-for="post in posts"
+      :key="post.id"
+      :id="post.id"
+      :is-admin="isAdmin"
+      :thumbnail="post.thumbnail"
+      :title="post.title"
+      :previewText="post.previewText"
     />
   </section>
 </template>
@@ -22,6 +19,16 @@ import PostPreview from '@/components/Posts/PostPreview.vue'
 export default Vue.extend({
   components: {
     PostPreview
+  },
+  props: {
+    isAdmin: {
+      type: Boolean,
+      default: false,
+    },
+    posts: {
+      type: Array,
+      required: true,
+    },
   },
 })
 </script>

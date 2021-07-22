@@ -1,11 +1,12 @@
 <template>
   <div class="admin-page">
     <section class="new-post">
-      <button>Create Post</button>
+      <AppButton @click="$router.push('/admin/new-post')">Create Post</AppButton>
     </section>
     <section class="existing-posts">
       <h1>Existing posts</h1>
-      <PostList />
+      <!-- passing isAdmin as a prop will set its value to true >>> -->
+      <PostList isAdmin :posts="loadedPosts" />
     </section>
   </div>
 </template>
@@ -13,11 +14,23 @@
 <script lang="ts">
 import Vue from 'vue'
 import PostList from '@/components/Posts/PostList.vue'
+import AppButton from '@/components/UI/AppButton.vue'
 
 export default Vue.extend({
+  layout: 'admin',
   components: {
-    PostList
+    PostList,
+    AppButton
   },
+  computed: {
+    loadedPosts() {
+      return this.$store.getters.loadedPosts;
+    }
+  },
+  // set html head per page if needed (overwrites values set in nuxt config,js)
+  head: {
+    title: 'Admin Section',
+  }
 })
 </script>
 

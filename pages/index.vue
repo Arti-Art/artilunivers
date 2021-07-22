@@ -3,19 +3,30 @@
     <section class="intro">
       <h1>Get the latest tech news!</h1>
     </section>
-    <PostList />
+    <PostList :posts="loadedPosts" />
   </div>
 </template>
 
-<script lang="ts">
-import Vue from 'vue'
+<script>
 import PostList from '@/components/Posts/PostList.vue'
 
-export default Vue.extend({
+export default {
   components: {
     PostList
   },
-})
+  computed: {
+    loadedPosts() {
+      return this.$store.getters.loadedPosts;
+    }
+  },
+  // AsyncData works ONLY in PAGES, executed on the server
+  // The 'this' keyword from Vue/Nuxt doesn't work in asyncData because the component hasn't been created yet
+  // We need to give asyncData an idea of when our call will be finished (otherwise returns right away)
+  // For that, you can use a promise, or a callback
+
+  // If you use asyncData, don't use data(){} because it might overwrite it
+  // In a normal vue app we would fetch data in the created(){} lifecycle
+}
 </script>
 
 <style>

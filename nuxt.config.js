@@ -1,17 +1,19 @@
 export default {
   // Target: https://go.nuxtjs.dev/config-target
-  target: 'static',
+  // target: 'static',
+  target: 'server',
+  ssr: true,
 
-  // Global page headers: https://go.nuxtjs.dev/config-head
+  // Global page headers: https://go.nuxtjs.dev/config-head. Applied to every page
   head: {
-    title: 'artilunivers',
+    title: 'Arti Blog',
     htmlAttrs: {
       lang: 'en',
     },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
+      { hid: 'description', name: 'description', content: 'Mastering Nuxt JS' },
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
@@ -19,6 +21,7 @@ export default {
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Open+Sans&display=swap' },
     ],
   },
+
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
@@ -66,5 +69,9 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
+
+  env: {
+    baseUrl: process.env.BASE_URL || 'https://nuxt-blog-873be-default-rtdb.europe-west1.firebasedatabase.app'
+  }
 }
 
