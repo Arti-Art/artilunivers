@@ -13,6 +13,9 @@ import Vue from 'vue'
 export default Vue.extend({
   // This file, at the root of my pages will be a wrapper for everything inside the blog folder
   layout: 'blog',
+  head: {
+    title: 'Blog - ArtyomDev'
+  },
   data() {
     return {
       postId: '',

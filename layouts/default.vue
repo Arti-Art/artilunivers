@@ -8,6 +8,8 @@
       <nuxt-link to="/portfolio">Portfolio</nuxt-link>
     </nav>
     <Header />
+    <TheHeader @sidenavToggle="displaySidenav = !displaySidenav" />
+    <TheSidenav :show="displaySidenav" @close="displaySidenav = false" />
     <Nuxt />
   </div>
 </template>
@@ -15,9 +17,18 @@
 <script lang="ts">
 import Vue from 'vue'
 import Header from '~/components/Header.vue'
+import TheHeader from '~/components/Navigation/TheHeader.vue'
+import TheSidenav from '~/components/Navigation/TheSidenav.vue'
 export default Vue.extend({
   components: {
     Header,
+    TheHeader,
+    TheSidenav,
+  },
+  data() {
+    return {
+      displaySidenav: false,
+    }
   },
 })
 </script>
@@ -50,7 +61,6 @@ export default Vue.extend({
     height: 101%;
     left: -20px;
     right: -20px;
-
   }
   &::after {
     background: rgb(255, 108, 108);

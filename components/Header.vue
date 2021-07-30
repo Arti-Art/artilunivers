@@ -19,6 +19,9 @@
 
 <style lang="scss" scoped>
 .header {
+  font-family: 'Nunito', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
   width: 100%;
   height: 60px;
   display: flex;
