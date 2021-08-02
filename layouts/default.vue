@@ -1,11 +1,11 @@
 <template>
   <div>
     <nav class="intro">
-      <nuxt-link to="/">Home</nuxt-link>
-      <nuxt-link to="/learning">Learning</nuxt-link>
-      <nuxt-link to="/blog">Blog</nuxt-link>
-      <nuxt-link to="/contact">Contact</nuxt-link>
-      <nuxt-link to="/portfolio">Portfolio</nuxt-link>
+      <nuxt-link to="/" class="navlink">Home</nuxt-link>
+      <nuxt-link to="/learning" class="navlink">Learning</nuxt-link>
+      <nuxt-link to="/blog" class="navlink">Blog</nuxt-link>
+      <nuxt-link to="/contact" class="navlink">Contact</nuxt-link>
+      <nuxt-link to="/portfolio" class="navlink">Portfolio</nuxt-link>
     </nav>
     <Header />
     <TheHeader @sidenavToggle="displaySidenav = !displaySidenav" />
@@ -14,12 +14,11 @@
   </div>
 </template>
 
-<script lang="ts">
-import Vue from 'vue'
+<script>
 import Header from '~/components/Header.vue'
 import TheHeader from '~/components/Navigation/TheHeader.vue'
 import TheSidenav from '~/components/Navigation/TheSidenav.vue'
-export default Vue.extend({
+export default {
   components: {
     Header,
     TheHeader,
@@ -30,7 +29,7 @@ export default Vue.extend({
       displaySidenav: false,
     }
   },
-})
+}
 </script>
 
 <style lang="scss">
@@ -42,6 +41,9 @@ export default Vue.extend({
   line-height: 1.75;
   color: rgb(204, 51, 17);
   margin: 15px 0;
+  .navlink:hover {
+    color: rgb(110, 26, 8);
+  }
   .nuxt-link-exact-active {
     border-bottom: 2px solid rgb(204, 51, 17);
   }

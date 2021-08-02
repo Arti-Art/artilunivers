@@ -35,7 +35,7 @@ export default {
   // Load certain functionnalities and execute some code before the app is mounted
   plugins: [
     // Loading global components >>>
-    // '~plugins/core-components.js'
+    '~plugins/core-components.js'
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components

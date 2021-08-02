@@ -8,42 +8,19 @@
       <section class="intro">
         <h1>Get the latest tech news!</h1>
       </section>
-
-      <section class="featured-posts">
-        <PostPreview
-          id="1"
-          thumbnail="https://source.unsplash.com/640x480/?computer"
-          title="Hello There"
-          previewText="Some lorem ipsum"
-        />
-        <PostPreview
-          id="2"
-          thumbnail="https://source.unsplash.com/640x480/?technology"
-          title="Second post"
-          previewText="Some lorem ipsum"
-        />
-        <PostPreview
-          id="3"
-          thumbnail="https://source.unsplash.com/640x480/?painting"
-          title="Third post"
-          previewText="Some lorem ipsum"
-        />
-      </section>
+      <PostList />
     </div>
   </div>
 </template>
 
-<script lang="ts">
-import Vue from 'vue'
-import BaseButton from '~/components/base/button.vue'
-import PostPreview from '~/components/Posts/PostPreview.vue'
+<script>
+import BaseButton from '~/components/base/button'
 
-export default Vue.extend({
+export default {
   components: {
-    BaseButton,
-    PostPreview,
+    BaseButton
   },
-})
+}
 </script>
 
 <style scoped>
@@ -79,12 +56,4 @@ export default Vue.extend({
   }
 }
 
-.featured-posts {
-  display: flex;
-  padding: 20px;
-  box-sizing: border-box;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-}
 </style>
